@@ -65,10 +65,13 @@ function App() {
 			const animalInputValue = animalInput.current.value
 			const fruitInputValue = fruitInput.current.value
 
-			if (category === 'animals' && animalInputValue.trim() === '') return null
-			if (category === 'fruits' && fruitInputValue.trim() === '') return null
+			if (category === Category.animals && animalInputValue.trim() === '')
+				return null
+			if (category === Category.fruits && fruitInputValue.trim() === '')
+				return null
 
-			const value = category === 'animals' ? animalInputValue : fruitInputValue
+			const value =
+				category === Category.animals ? animalInputValue : fruitInputValue
 
 			setData((prev) => ({
 				...prev,
