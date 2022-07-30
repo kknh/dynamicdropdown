@@ -90,27 +90,42 @@ function App() {
 				<br />
 				<input
 					id="addAnimal"
+					data-testid="animalInput"
 					onChange={handleChangeAddAnimal}
 					ref={animalInput}
 				/>
-				<button type="submit">add</button>
+				<button type="submit" data-testid="addAnimalBtn">
+					add
+				</button>
 			</form>
 			<br />
 			<br />
 			<form onSubmit={(e) => handleSubmitNewAnimal(e, Category.fruits)}>
 				<label htmlFor="addFruit">Add an another fruit:</label>
 				<br />
-				<input id="addFruit" onChange={handleChangeAddFruit} ref={fruitInput} />
-				<button type="submit">add</button>
+				<input
+					id="addFruit"
+					data-testid="fruitInput"
+					onChange={handleChangeAddFruit}
+					ref={fruitInput}
+				/>
+				<button type="submit" data-testid="addFruitBtn">
+					add
+				</button>
 			</form>
 			<br />
 			<br />
 			<label htmlFor="animal">Choose Your Favorite Animal:</label>
 			<br />
-			<select id="animal" value={animalSelection} onChange={handleSelectAnimal}>
+			<select
+				id="animal"
+				data-testid="animalSelection"
+				value={animalSelection}
+				onChange={handleSelectAnimal}
+			>
 				<option value={''}>-</option>
 				{data?.animals?.map((animal, i) => (
-					<option key={i} value={animal.name}>
+					<option key={i} value={animal.name} data-testid="animalOption">
 						{animal.name}
 					</option>
 				))}
@@ -119,7 +134,12 @@ function App() {
 			<br />
 			<label htmlFor="animal">Choose Your Favorite Fruit:</label>
 			<br />
-			<select id="fruit" value={fruitSelection} onChange={handleSelectFruit}>
+			<select
+				id="fruit"
+				data-testid="fruitSelection"
+				value={fruitSelection}
+				onChange={handleSelectFruit}
+			>
 				<option value={''}>-</option>
 				{data?.fruits?.map((fruit, i) => (
 					<option key={i} value={fruit.name}>
